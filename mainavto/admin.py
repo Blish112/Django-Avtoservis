@@ -31,12 +31,16 @@ class Char_repaircar(admin.ModelAdmin):
 
 @admin.register(models.Details)
 class Details(admin.ModelAdmin):
-    list_display = ('name_model', 'count', 'cost', 'stock_availability')
+    list_display = ('name_model', 'count','cost', 'stock_availability', 'stock_onzakaz')
 
 @admin.register(models.Accountingwork)
 class Accountingwork(admin.ModelAdmin):
-    list_display = ('id_clientcar', 'id_details', 'description')
+    list_display = ('id_clientcar', 'id_details', 'id_listwork', 'total_cost', 'description')
 
 @admin.register(models.Listwork)
 class ProfessionAdmin(admin.ModelAdmin):
-    list_display = ('name_listwork',)
+    list_display = ('name_listwork', 'cost_listwork')
+
+@admin.register(models.Zakazdetails)
+class ProfessionAdmin(admin.ModelAdmin):
+    list_display = ('model', 'count', 'cost_det', 'total_zak', 'stock_zakaz', 'id_clientcar')
